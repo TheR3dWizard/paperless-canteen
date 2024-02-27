@@ -1,0 +1,90 @@
+{
+  "project_info": {
+    "project_number": "968589014066",
+    "project_id": "paperless-canteen",
+    "storage_bucket": "paperless-canteen.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:968589014066:android:1e7efbb62929336f51382b",
+        "android_client_info": {
+          "package_name": "com.example.canteen_admin"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "968589014066-rhg2ts6fv4dqg8mui74dldgq8iqhqfsq.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD8pU7Mkhaku47V_InXlDYAWPKehcadz3Q"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "968589014066-rhg2ts6fv4dqg8mui74dldgq8iqhqfsq.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "968589014066-4vu1cnpg2qqqu50d3r0pblati5rn61p1.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.paperlessCanteen"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:968589014066:android:b326290bed1b4b3f51382b",
+        "android_client_info": {
+          "package_name": "com.example.paperless_canteen"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "968589014066-bu0unt9i1757smt18isqmt5l2lo9bjdh.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.paperless_canteen",
+            "certificate_hash": "748f6de0110c3702eaa7766e9ac0ff41dc377877"
+          }
+        },
+        {
+          "client_id": "968589014066-rhg2ts6fv4dqg8mui74dldgq8iqhqfsq.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD8pU7Mkhaku47V_InXlDYAWPKehcadz3Q"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "968589014066-rhg2ts6fv4dqg8mui74dldgq8iqhqfsq.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "968589014066-4vu1cnpg2qqqu50d3r0pblati5rn61p1.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.paperlessCanteen"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
