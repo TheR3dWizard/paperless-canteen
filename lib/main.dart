@@ -1,14 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:paperless_canteen/screens/Bill/BillHome.dart';
-import 'package:paperless_canteen/screens/Bill/BillScreen.dart';
 import 'package:paperless_canteen/screens/Bill/ViewBillsScreen.dart';
 import 'package:paperless_canteen/screens/ExtraScreens/GoogleAuth.dart';
 import 'package:paperless_canteen/screens/ExtraScreens/QRCodeScanner.dart';
 import 'package:paperless_canteen/screens/Home/HomeScreen.dart';
-// import 'package:paperless_canteen/screens/Login/Login.dart';
 import 'package:paperless_canteen/screens/Profile/ProfileScreen.dart';
 import 'package:paperless_canteen/screens/Panaroma/panaromaScreen.dart';
-import 'package:qr_flutter/qr_flutter.dart';
 import 'package:flutter/services.dart';
 import 'package:provider/provider.dart';
 
