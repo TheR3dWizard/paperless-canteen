@@ -76,68 +76,71 @@ class _HomeScreenState extends State<HomeScreen> {
                 Container(
                   width: double.infinity,
                   height: 50,
-                  child: ListView(scrollDirection: Axis.horizontal, children: [
-                    SizedBox(width: 30),
-                    ChoiceChip(
-                        padding:
-                            EdgeInsets.symmetric(horizontal: 14, vertical: 8),
-                        label: Text("Order Now",
-                            style: TextStyle(
-                                fontSize: 16,
-                                fontWeight: FontWeight.w700,
-                                color: orderNowSelected
-                                    ? Colors.white
-                                    : Colors.black)),
-                        selected: orderNowSelected,
-                        selectedColor: Colors.black,
-                        backgroundColor: Colors.white,
-                        side: BorderSide(color: Colors.black, width: 1),
-                        onSelected: (bool selected) {
-                          setState(() {
-                            orderNowSelected = selected;
-                          });
-                        }),
-                    SizedBox(width: 10),
-                    ChoiceChip(
-                        padding:
-                            EdgeInsets.symmetric(horizontal: 14, vertical: 8),
-                        label: Text("View Bills",
-                            style: TextStyle(
-                                fontSize: 16,
-                                fontWeight: FontWeight.w700,
-                                color: profileSelected
-                                    ? Colors.white
-                                    : Colors.black)),
-                        selected: profileSelected,
-                        selectedColor: Colors.black,
-                        backgroundColor: Colors.white,
-                        side: BorderSide(color: Colors.black, width: 1),
-                        onSelected: (bool selected) {
-                          if (selected) {
-                            Navigator.of(context).pushNamed("/view-bills");
-                          }
-                        }),
-                    SizedBox(width: 10),
-                    ChoiceChip(
-                        padding:
-                            EdgeInsets.symmetric(horizontal: 14, vertical: 8),
-                        label: Text("Profile",
-                            style: TextStyle(
-                                fontSize: 16,
-                                fontWeight: FontWeight.w700,
-                                color: profileSelected
-                                    ? Colors.white
-                                    : Colors.black)),
-                        selected: profileSelected,
-                        selectedColor: Colors.black,
-                        backgroundColor: Colors.white,
-                        side: BorderSide(color: Colors.black, width: 1),
-                        onSelected: (bool selected) {
-                          if (selected) {
-                            Navigator.of(context).pushNamed("/profile");
-                          }
-                        }),
-                  ]),
+                  child: ListView(
+                      scrollDirection: Axis.horizontal,
+                      physics: RangeMaintainingScrollPhysics(),
+                      children: [
+                        SizedBox(width: 30),
+                        ChoiceChip(
+                            padding: EdgeInsets.symmetric(
+                                horizontal: 14, vertical: 8),
+                            label: Text("Order Now",
+                                style: TextStyle(
+                                    fontSize: 16,
+                                    fontWeight: FontWeight.w700,
+                                    color: orderNowSelected
+                                        ? Colors.white
+                                        : Colors.black)),
+                            selected: orderNowSelected,
+                            selectedColor: Colors.black,
+                            backgroundColor: Colors.white,
+                            side: BorderSide(color: Colors.black, width: 1),
+                            onSelected: (bool selected) {
+                              setState(() {
+                                orderNowSelected = selected;
+                              });
+                            }),
+                        SizedBox(width: 10),
+                        ChoiceChip(
+                            padding: EdgeInsets.symmetric(
+                                horizontal: 14, vertical: 8),
+                            label: Text("View Bills",
+                                style: TextStyle(
+                                    fontSize: 16,
+                                    fontWeight: FontWeight.w700,
+                                    color: profileSelected
+                                        ? Colors.white
+                                        : Colors.black)),
+                            selected: profileSelected,
+                            selectedColor: Colors.black,
+                            backgroundColor: Colors.white,
+                            side: BorderSide(color: Colors.black, width: 1),
+                            onSelected: (bool selected) {
+                              if (selected) {
+                                Navigator.of(context).pushNamed("/view-bills");
+                              }
+                            }),
+                        SizedBox(width: 10),
+                        ChoiceChip(
+                            padding: EdgeInsets.symmetric(
+                                horizontal: 14, vertical: 8),
+                            label: Text("Profile",
+                                style: TextStyle(
+                                    fontSize: 16,
+                                    fontWeight: FontWeight.w700,
+                                    color: profileSelected
+                                        ? Colors.white
+                                        : Colors.black)),
+                            selected: profileSelected,
+                            selectedColor: Colors.black,
+                            backgroundColor: Colors.white,
+                            side: BorderSide(color: Colors.black, width: 1),
+                            onSelected: (bool selected) {
+                              if (selected) {
+                                Navigator.of(context).pushNamed("/profile");
+                              }
+                            }),
+                      ]),
                 ),
                 SizedBox(height: 20),
                 Container(
@@ -176,13 +179,20 @@ class BuildItemsWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     final itemsData = Provider.of<FoodItems>(context);
     final items = itemsData.items;
+    final tiffinitems =
+        items.where((element) => element.category == "Tiffin").toList();
+    final beverageitems =
+        items.where((element) => element.category == "BEVERAGE").toList();
+    final sandwichitems =
+        items.where((element) => element.category == "SANDWICH").toList();
     return Column(
       children: [
-        // ItemsCategory(title: "Bakery 2", itemsList: items),
-        // SizedBox(height: 10),
-        ItemsCategory(title: "Tiffin", itemsList: items),
+        ItemsCategory(title: "Tiffin", itemsList: tiffinitems),
         SizedBox(height: 10),
-        ItemsCategory(title: "Your Mom", itemsList: items),
+        ItemsCategory(title: "Beverages", itemsList: beverageitems),
+        SizedBox(height: 10),
+        ItemsCategory(title: "Sandwiches", itemsList: sandwichitems),
+        SizedBox(height: 10)
       ],
     );
   }
