@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:paperless_canteen/constants/items.dart';
 import 'package:paperless_canteen/providers/foodItem.dart';
 import 'package:provider/provider.dart';
-
+import 'package:flutter/services.dart';
 import '../../../models/models.dart';
 
 class ItemCard extends StatefulWidget {
@@ -63,6 +63,7 @@ class _ItemCardState extends State<ItemCard> {
                               "assets/images/counterRemoveImage.png")),
                     ),
                     onTap: () {
+                      HapticFeedback.mediumImpact();
                       setState(() {
                         if (widget.itemCounter > 0)
                           foodItemsData.decrementItemCounter(widget.id);
@@ -78,6 +79,7 @@ class _ItemCardState extends State<ItemCard> {
                               AssetImage("assets/images/counterAddImage.png")),
                     ),
                     onTap: () {
+                      HapticFeedback.mediumImpact();
                       setState(() {
                         foodItemsData.incrementItemCounter(widget.id);
                       });
@@ -97,7 +99,7 @@ class _ItemCardState extends State<ItemCard> {
                       child: Row(
                         children: [
                           Container(
-                            width: 80,
+                            width: 120,
                             child: Text(
                               widget.name,
                               style: TextStyle(
@@ -105,21 +107,6 @@ class _ItemCardState extends State<ItemCard> {
                                   fontSize: 22,
                                   fontWeight: FontWeight.w700),
                             ),
-                          ),
-                          Container(
-                            width: 54,
-                            height: 24,
-                            alignment: Alignment.center,
-                            child: Text(
-                              widget.category,
-                              style: TextStyle(
-                                  color: Colors.black,
-                                  fontSize: 14,
-                                  fontWeight: FontWeight.w700),
-                            ),
-                            decoration: BoxDecoration(
-                                borderRadius: BorderRadius.circular(33),
-                                color: Colors.white.withOpacity(0.85)),
                           ),
                         ],
                       ),
@@ -152,6 +139,7 @@ class _ItemCardState extends State<ItemCard> {
                     ? GestureDetector(
                         child: AddButton(),
                         onTap: () {
+                          HapticFeedback.mediumImpact();
                           setState(() {
                             foodItemsData.incrementItemCounter(widget.id);
                           });
