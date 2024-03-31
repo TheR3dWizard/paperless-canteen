@@ -5,13 +5,22 @@ import 'package:google_sign_in/google_sign_in.dart';
 import 'package:paperless_canteen/models/models.dart';
 
 class FoodItems with ChangeNotifier {
+  Item item0 = Item(
+      name: "Maa Juice",
+      tamilName: "மா ஜூஸ்",
+      category: "BEVERAGE",
+      price: 10,
+      counterId: 4,
+      imagePath: "assets/images/blackbg.png",
+      id: "1000",
+      status: -1);
   Item item1 = Item(
       name: "Cavins Milk",
       tamilName: "கவின்ஸ் மில்க்",
-      category: "BEV",
+      category: "BEVERAGE",
       price: 35,
       counterId: 4,
-      imagePath: "assets/images/cavins_milkshake.png",
+      imagePath: "assets/images/blackbg.png",
       id: "1001",
       status: -1);
   Item item2 = Item(
@@ -23,7 +32,6 @@ class FoodItems with ChangeNotifier {
       imagePath: "assets/images/dosaImage.png",
       id: "1002",
       status: 10);
-
   Item item3 = Item(
       name: "Onion Dosa",
       tamilName: "நெய் ரோஸ்ட்",
@@ -42,7 +50,42 @@ class FoodItems with ChangeNotifier {
       imagePath: "assets/images/dosaImage.png",
       id: "1004",
       status: -1);
-
+  Item item5 = Item(
+      name: "PSG Lemon Juice",
+      tamilName: "எலுமிச்சை ஜூஸ்",
+      category: "BEVERAGE",
+      price: 15,
+      counterId: 4,
+      imagePath: "assets/images/blackbg.png",
+      id: "1005",
+      status: -1);
+  Item item6 = Item(
+      name: "Corn Cheese Sandwich",
+      tamilName: "கார்ன் சீஸ் சாண்ட்விச்",
+      category: "SANDWICH",
+      price: 55,
+      counterId: 4,
+      imagePath: "assets/images/blackbg.png",
+      id: "1006",
+      status: -1);
+  Item item7 = Item(
+      name: "Paneer Sandwich",
+      tamilName: "பனீர் சாண்ட்விச்",
+      category: "SANDWICH",
+      price: 50,
+      counterId: 4,
+      imagePath: "assets/images/blackbg.png",
+      id: "1007",
+      status: -1);
+  Item item8 = Item(
+      name: "Veg Sandwich",
+      tamilName: "வெஜ் சாண்ட்விச்",
+      category: "SANDWICH",
+      price: 35,
+      counterId: 4,
+      imagePath: "assets/images/blackbg.png",
+      id: "1008",
+      status: -1);
   GoogleSignIn _googleSignIn = GoogleSignIn(
     scopes: [
       'email',
@@ -59,15 +102,25 @@ class FoodItems with ChangeNotifier {
   GoogleSignInAccount? _currentUser;
 
   FoodItems() {
+    _itemMap[item0.id] = item0;
     _itemMap[item1.id] = item1;
     _itemMap[item2.id] = item2;
     _itemMap[item3.id] = item3;
     _itemMap[item4.id] = item4;
+    _itemMap[item5.id] = item5;
+    _itemMap[item6.id] = item6;
+    _itemMap[item7.id] = item7;
+    _itemMap[item8.id] = item8;
 
+    _items.add(item0);
     _items.add(item1);
     _items.add(item2);
     _items.add(item3);
     _items.add(item4);
+    _items.add(item5);
+    _items.add(item6);
+    _items.add(item7);
+    _items.add(item8);
   }
 
   bool isUserLoggedIn() {
