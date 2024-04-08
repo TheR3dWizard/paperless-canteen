@@ -1,3 +1,5 @@
+// ignore_for_file: avoid_unnecessary_containers
+
 import 'package:flutter/material.dart';
 import 'package:qr_flutter/qr_flutter.dart';
 
@@ -12,17 +14,17 @@ class _QRGeneratorState extends State<QRGenerator> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text("QR Code Generator")),
+      appBar: AppBar(title: const Text("QR Code Generator")),
       body: Container(
         alignment: Alignment.center,
-        child: QrImage(
+        child: const QrImageView(
           data: 'Welcome to Paperless Canteen! Bill #2412',
           version: QrVersions.auto,
           size: 320,
           gapless: false,
           errorStateBuilder: (cxt, err) {
             return Container(
-              child: Center(
+              child: const Center(
                 child: Text(
                   "Uh oh! Something went wrong...",
                   textAlign: TextAlign.center,
