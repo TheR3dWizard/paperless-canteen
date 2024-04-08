@@ -176,7 +176,7 @@ class QRCode extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       alignment: Alignment.center,
-      child: QrImage(
+      child: QrImageView(
         data: id,
         version: QrVersions.auto,
         size: 150,
