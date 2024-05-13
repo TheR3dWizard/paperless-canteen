@@ -3,3 +3,4 @@ build
 .flutter-plugins
 .pub-cache
 .flutter-plugins-dependencies
+.lock
